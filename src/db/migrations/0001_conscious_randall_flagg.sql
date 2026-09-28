@@ -1,0 +1,2 @@
+ALTER TABLE "accounts" DROP CONSTRAINT "accounts_credit_card_fields_check";--> statement-breakpoint
+ALTER TABLE "accounts" ADD CONSTRAINT "accounts_credit_card_fields_check" CHECK ("accounts"."type" <> 'credit_card' OR ("accounts"."credit_limit_cents" IS NOT NULL AND "accounts"."statement_day" IS NOT NULL AND "accounts"."statement_day" BETWEEN 1 AND 28 AND "accounts"."due_day" IS NOT NULL AND "accounts"."due_day" BETWEEN 1 AND 28));

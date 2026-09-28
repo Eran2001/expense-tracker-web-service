@@ -1,0 +1,10 @@
+{
+  "name": "Ledger | Personal Money Manager",
+  "short_name": "Ledger",
+  "description": "A private personal finance ledger.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
+  "categories": ["finance"]
+}
