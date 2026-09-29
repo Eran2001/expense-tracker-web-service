@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Manrope, Noto_Sans_Sinhala } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -31,7 +32,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <Script id="ledger-theme-bootstrap" strategy="beforeInteractive">
+          {`try {
+            const savedTheme = localStorage.getItem("ledger-theme");
+            if (savedTheme === "dark" || savedTheme === "light") {
+              document.documentElement.classList.toggle("dark", savedTheme === "dark");
+            }
+          } catch {}`}
+        </Script>
+      </head>
       <body
         className={`${manrope.variable} ${geistMono.variable} ${notoSinhala.variable} antialiased`}
       >

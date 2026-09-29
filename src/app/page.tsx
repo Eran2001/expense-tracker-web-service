@@ -1,5 +1,5 @@
-import { LedgerShell } from "@/components/ledger-shell";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <LedgerShell />;
+  redirect("/overview");
 }
