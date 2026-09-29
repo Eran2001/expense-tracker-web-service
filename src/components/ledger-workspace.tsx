@@ -23,6 +23,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navigation = [
   {
@@ -249,8 +250,13 @@ export function LedgerWorkspace({ children }: { children: React.ReactNode }) {
           href="/overview"
           aria-label="Ledger home"
         >
-          <span className="brand-mark">L</span>
-          <span>Ledger</span>
+          <Image
+            src="/logo.png"
+            alt="Ledger"
+            width={216}
+            height={32}
+            priority
+          />
         </Link>
         <Button
           className="add-transaction w-full justify-start gap-2.5"
@@ -358,7 +364,7 @@ export function LedgerWorkspace({ children }: { children: React.ReactNode }) {
           <span className="brand-mark">L</span>
           <span>Ledger</span>
         </div>
-        <div className="workspace-content mx-auto w-full max-w-[1380px] pt-6.25 pb-15 max-md:pt-4.5 max-md:pb-2 max-phone-lg:pt-3.5 max-h-700:pt-3.25 max-h-700:pb-7.5 max-h-700:max-md:pb-1 max-h-700:max-phone-lg:pt-3.25">
+        <div className="workspace-content mx-auto w-full max-w-345 pt-6.25 pb-15 max-md:pt-4.5 max-md:pb-2 max-phone-lg:pt-3.5 max-h-700:pt-3.25 max-h-700:pb-7.5 max-h-700:max-md:pb-1 max-h-700:max-phone-lg:pt-3.25">
           {children}
         </div>
       </main>
